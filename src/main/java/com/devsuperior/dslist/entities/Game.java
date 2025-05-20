@@ -14,19 +14,24 @@ import jakarta.persistence.Table;
 public class Game {
    
 	// Adicionando os atributos
-	
-	@Id // annotation para dizer que a minha propriedade id vai ser a PK
+	@Id // "annotation" para dizer que a minha propriedade id vai ser a PK
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-incrementa o valor de id
 	private Long id;
 	private String title;
 	
-	@Column(name = "game_year") // customizaremos o nome no BD pois ela eh uma palavra reservada em SQL
+	@Column(name = "game_year") // Customizaremos o nome no BD pois ela eh uma palavra reservada em SQL
 	private Integer year;
 	private String genre;
 	private String platforms;
 	private Double score;
 	private String imgUrl;
+	
+	// Nos dois casos abaixo, se deixarmos apenas a string, o JPA transformara em varchar que aceita apenas 255 caracteres
+	// Sendo assim, iremos usar a "annotation" Column e dizer que o tipo da coluna eh "TEXT", que aceita bem mais
+	@Column(columnDefinition = "TEXT") 
 	private String shortDescription;
+	
+	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 	
 	// Construtores
@@ -127,13 +132,13 @@ public class Game {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) 
 			return true;
 		if (obj == null)
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
 		Game other = (Game) obj;
-		return Objects.equals(id, other.id);
+		return Objects.equals(id, other.id); // Testa se o id eh igual ao id que passamos como parametro  
 	}
 }
