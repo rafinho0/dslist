@@ -9,26 +9,26 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "tb_belonging")
 public class Belonging {
-	
-	@EmbeddedId // Diz que o proximo atributo eh uma PK Composta (Game, GameList)
-	private BelongingPK id = new BelongingPK(); // Devemos inicializa-lo pois queremos instancia-lo no construtor
-	
+
+	@EmbeddedId
+	private BelongingPK id = new BelongingPK();
+
 	private Integer position;
-	
-	public Belonging() {
-	}
 
-	public Belonging(Game game, GameList list) {
+	public void setGame(Game game) {
 		id.setGame(game);
-		id.setGameList(list);
 	}
 
-	public BelongingPK getId() {
-		return id;
+	public Game getGame() {
+		return id.getGame();
 	}
 
-	public void setId(BelongingPK id) {
-		this.id = id;
+	public void setList(GameList list) {
+		id.setList(list);
+	}
+
+	public GameList getList() {
+		return id.getList();
 	}
 
 	public Integer getPosition() {

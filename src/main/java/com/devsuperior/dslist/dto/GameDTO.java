@@ -4,7 +4,6 @@ import org.springframework.beans.BeanUtils;
 
 import com.devsuperior.dslist.entities.Game;
 
-// A principal diferenca desta classe pra outra, eh que essa retorna todos os dados
 public class GameDTO {
 
 	private Long id;
@@ -17,14 +16,11 @@ public class GameDTO {
 	private String shortDescription;
 	private String longDescription;
 	
-	public GameDTO() {	
+	public GameDTO() {
 	}
-
+	
 	public GameDTO(Game entity) {
-		// Copiamos os objetos de um local (game) para outro (essa classe)
-		// Os atributos devem possuir o mesmo nome
-		// Para funcionar, deve haver get e set
-		BeanUtils.copyProperties(entity, this); 
+		BeanUtils.copyProperties(entity, this);
 	}
 
 	public Long getId() {

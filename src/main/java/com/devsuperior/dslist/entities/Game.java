@@ -9,35 +9,31 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity // Equivalente a uma tabela em um RDB
+@Entity
 @Table(name = "tb_game")
 public class Game {
-   
-	// Adicionando os atributos
-	@Id // "annotation" para dizer que a minha propriedade id vai ser a PK
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-incrementa o valor de id
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
 	
-	@Column(name = "game_year") // Customizaremos o nome no BD pois ela eh uma palavra reservada em SQL
+	@Column(name = "game_year")
 	private Integer year;
 	private String genre;
 	private String platforms;
 	private Double score;
 	private String imgUrl;
 	
-	// Nos dois casos abaixo, se deixarmos apenas a string, o JPA transformara em varchar que aceita apenas 255 caracteres
-	// Sendo assim, iremos usar a "annotation" Column e dizer que o tipo da coluna eh "TEXT", que aceita bem mais
-	@Column(columnDefinition = "TEXT") 
+	@Column(columnDefinition = "TEXT")
 	private String shortDescription;
-	
+
 	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 	
-	// Construtores
-	public Game() {
-	}
-
+    public Game() {
+    }
+    
 	public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
 			String shortDescription, String longDescription) {
 		this.id = id;
@@ -48,10 +44,9 @@ public class Game {
 		this.score = score;
 		this.imgUrl = imgUrl;
 		this.shortDescription = shortDescription;
-		this.longDescription = longDescription;
+		this.longDescription = longDescription;		
 	}
 
-	// Getters e Setters
 	public Long getId() {
 		return id;
 	}
@@ -124,7 +119,6 @@ public class Game {
 		this.longDescription = longDescription;
 	}
 
-	// hash e equals para compararmos se os jogos sao iguais pelo id
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -132,13 +126,13 @@ public class Game {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj) 
+		if (this == obj)
 			return true;
 		if (obj == null)
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
 		Game other = (Game) obj;
-		return Objects.equals(id, other.id); // Testa se o id eh igual ao id que passamos como parametro  
+		return Objects.equals(id, other.id);
 	}
 }
