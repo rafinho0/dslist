@@ -20,6 +20,7 @@ public class GameController {
 	private GameService gameService;	
 
 	@GetMapping(value = "/{id}")
+	// Usamos o PathVariable para asseguramos que o ID passado na requisicao sera o mesmo parametrizado
 	public GameDTO findById(@PathVariable Long id) {
 		GameDTO result = gameService.findById(id);
 		return result;

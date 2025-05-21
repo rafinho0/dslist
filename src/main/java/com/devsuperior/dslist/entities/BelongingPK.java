@@ -7,6 +7,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Embeddable
+// Diz que BelongingPK vai ser um tipo que representa dois campos de ID 
+// Encapsulamos dois atributos em uma classe so
 public class BelongingPK {
 
 	@ManyToOne
@@ -47,6 +49,7 @@ public class BelongingPK {
 		if (getClass() != obj.getClass())
 			return false;
 		BelongingPK other = (BelongingPK) obj;
+		// Por ser uma PK composta, devemos comparar os dois atributos
 		return Objects.equals(game, other.game) && Objects.equals(list, other.list);
 	}
 }

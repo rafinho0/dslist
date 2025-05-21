@@ -20,6 +20,9 @@ public class GameDTO {
 	}
 	
 	public GameDTO(Game entity) {
+		// Copiamos os objetos de um local (game) para outro (essa classe)
+		// Os atributos devem possuir o mesmo nome
+		// Para funcionar, deve haver getters e setters
 		BeanUtils.copyProperties(entity, this);
 	}
 

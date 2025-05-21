@@ -9,7 +9,7 @@ import com.devsuperior.dslist.entities.Game;
 import com.devsuperior.dslist.projections.GameMinProjection;
 
 public interface GameRepository extends JpaRepository<Game, Long> {
-
+	// Aqui iremos fazer uma query com SQL utilizando a annotation Query
 	@Query(nativeQuery = true, value = """
 			SELECT tb_game.id, tb_game.title, tb_game.game_year AS `year`, tb_game.img_url AS imgUrl,
 			tb_game.short_description AS shortDescription, tb_belonging.position
@@ -18,5 +18,6 @@ public interface GameRepository extends JpaRepository<Game, Long> {
 			WHERE tb_belonging.list_id = :listId
 			ORDER BY tb_belonging.position
 				""")
+	// Aqui passaremos a Projection (que seria a interface que possui os atributos da consulta)
 	List<GameMinProjection> searchByList(Long listId);
 }

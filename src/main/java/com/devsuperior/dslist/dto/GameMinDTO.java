@@ -3,6 +3,8 @@ package com.devsuperior.dslist.dto;
 import com.devsuperior.dslist.entities.Game;
 import com.devsuperior.dslist.projections.GameMinProjection;
 
+// Nesta classe DTO, mostraremos apenas os dados minimos, ou seja, 
+// o controlador vai receber apenas uma parte dos dados
 public class GameMinDTO {
 
 	private Long id;
@@ -14,6 +16,7 @@ public class GameMinDTO {
 	public GameMinDTO() {
 	}
 	
+	// Construtor que recebera os dados diretamente da entidade Game
 	public GameMinDTO(Game entity) {
 		id = entity.getId();
 		title = entity.getTitle();
@@ -22,6 +25,7 @@ public class GameMinDTO {
 		shortDescription = entity.getShortDescription();
 	}
 
+	// Construtor para a Projection, passando os atributos que ela precisa
 	public GameMinDTO(GameMinProjection projection) {
 		id = projection.getId();
 		title = projection.getTitle();

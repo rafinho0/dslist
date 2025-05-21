@@ -11,7 +11,9 @@ import jakarta.persistence.Table;
 public class Belonging {
 
 	@EmbeddedId
-	private BelongingPK id = new BelongingPK();
+	// EmbeddedId -> Diz que o proximo atributo eh uma PK Composta (Game, GameList)
+	// Devemos inicializa-lo BelongingPk pois instanciaremos no construtor
+	private BelongingPK id = new BelongingPK(); 
 
 	private Integer position;
 

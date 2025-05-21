@@ -9,22 +9,24 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
+@Entity // Equivalente a uma tabela em um RDB
 @Table(name = "tb_game")
 public class Game {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id // Diz que propriedade id vai ser a PK
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-incrementa o valor de id
 	private Long id;
 	private String title;
 	
-	@Column(name = "game_year")
+	@Column(name = "game_year") // Customizaremos o nome no BD pois "year" uma palavra reservada em SQL
 	private Integer year;
 	private String genre;
 	private String platforms;
 	private Double score;
 	private String imgUrl;
 	
+	// Nos dois casos abaixo, se deixarmos apenas a string, o JPA transformara em varchar que aceita apenas 255 caracteres
+	// Sendo assim, iremos usar a "annotation" Column e dizer que o tipo da coluna eh "TEXT", que aceita bem mais
 	@Column(columnDefinition = "TEXT")
 	private String shortDescription;
 
