@@ -7,9 +7,10 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
+// Essa classe serve para configurar o cors
 public class WebConfig {
 
-	@Value("${cors.origins}")
+	@Value("${cors.origins}") // Variavel do cors
 	private String corsOrigins;
 	
 	@Bean
