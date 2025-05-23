@@ -2,7 +2,10 @@
 # Sobre o projeto
 Este projeto foi feito com base no **Intensivão Java Spring** do DevSuperior.
 Neste projeto, utilizamos tecnologias como Java e Spring Boot para criarmos uma lista de jogos, onde podemos selecionar quais jogos queremos ver por id, selecionar qual tipo de lista de jogos mostrará, organiza-la na ordem que quisermos e muito mais.
-# Exemplo com Postman
+# Como testar?
+Baixe o projeto na sua máquina e rode-o com o spring boot.
+Utilize o arquivo que disponibilizei e rode no postman (Back-End/DSList.postman_collection.json)
+## Exemplo com Postman
 ![games](https://github.com/rafinho0/dslist/blob/main/Back-End/assets/games.png) ![game-list](https://github.com/rafinho0/dslist/blob/main/Back-End/assets/game-list.png)
 # Tecnologias utilizadas
 ## Back end
