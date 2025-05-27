@@ -4,14 +4,6 @@
 Este projeto foi feito com base no **Intensivão Java Spring** do DevSuperior.
 Neste projeto, utilizamos tecnologias como Java e Spring Boot para criarmos uma lista de jogos, onde podemos selecionar quais jogos queremos ver por id, selecionar qual tipo de lista de jogos mostrará, organiza-la na ordem que quisermos e muito mais.
 # Como testar?
-# Nome do Seu Projeto Spring Boot
-
-Este é o repositório do meu projeto Spring Boot. Abaixo você encontrará instruções sobre como configurá-lo e executá-lo em sua máquina local.
-
-## Descrição do Projeto
-
-(Aqui você pode adicionar uma breve descrição do seu projeto, o que ele faz, suas principais funcionalidades, etc.)
-
 ## Pré-requisitos
 
 Para rodar este projeto, você precisará ter o **Java Development Kit (JDK)** e o **Maven** instalados em sua máquina.
