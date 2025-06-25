@@ -1,4 +1,3 @@
-
 # Lista de Jogos
 # Sobre o projeto
 Este projeto foi feito com base no **Intensivão Java Spring** do DevSuperior.
@@ -47,7 +46,7 @@ Siga os passos abaixo para clonar o repositório e executar o projeto:
     # dentro da pasta target
     java -jar target/dslist-0.0.1-SNAPSHOT.jar
     ```
-E poderá acessá-lo via navegador em `http://localhost:8080` e com os endpoints. 
+E poderá acessá-lo via navegador em `http://localhost:8080` e com os endpoints. Outra opção é acessar o SwaggerUI, basta inserir este link no seu navegador `http://localhost:8080/swagger-ui.html`.
 No entanto, **é recomendado** que **utilize o arquivo json** [***DSList.postman_collection***] disponibilizado dentro da pasta Back-End e **execute-o no postman**, assim, já terá todos os endpoints configurados.
 
 ## Exemplo com Postman
